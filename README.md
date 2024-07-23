@@ -1,4 +1,30 @@
-# React + TypeScript + Vite
+![alt text](public/MagicBookQuest.png)
+
+This reading log is for my bookworm daughters. My eldest🚀 is an avid reader and totally obsessed with the number of pages she's read. Her little sister🦄 is following in her footsteps and so I've decided to make a reading log for thier home reading.
+
+---
+
+## Features
+
+### MVP
+
+- Profile Page ✅
+- Book search ✅
+- Saved book list ✅
+- Page Count ✅
+- Overall page count ✅
+
+### Stretch Goals
+
+- Sorted Fact/Fiction
+- Rating
+- Login
+
+# Magic Book Quest
+
+## React + TypeScript + Vite
+
+Run with command - netlify dev
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -17,12 +43,12 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json", "./tsconfig.app.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
