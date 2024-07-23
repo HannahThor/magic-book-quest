@@ -15,23 +15,16 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useHistory } from "@/queries/history";
 
 const BookCollection = () => {
-  const [bookCollection, setBookCollection] = useState<GoogleBookData[] | null>(
-    null
-  );
   const [totalPageCount, setTotalPageCount] = useState<number>(0); // Added type 'number' to state
+  const { data: bookCollection, isLoading, error } = useHistory("Hannah");
 
-  // Fetching data from API
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch("/.netlify/functions/history?userId=Hannah");
-      const jsonData = await response.json();
-      const sortedData = jsonData.reverse();
-      setBookCollection(sortedData);
-
+    if (bookCollection) {
       // Calculate total page count
-      const totalCount = jsonData.reduce(
+      const totalCount = bookCollection.reduce(
         (total: number, book: GoogleBookData) => {
           if (book.volumeInfo && book.volumeInfo.pageCount) {
             return total + book.volumeInfo.pageCount;
@@ -43,9 +36,16 @@ const BookCollection = () => {
 
       // Set the total page count
       setTotalPageCount(totalCount);
-    };
-    fetchData();
-  }, []);
+    }
+  }, [bookCollection]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error loading data</div>;
+  }
 
   return (
     <>
