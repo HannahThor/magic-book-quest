@@ -1,5 +1,5 @@
-import Avatar from "@/components/Avatar";
-import BookCollection from "@/components/BookCollection";
+import Avatar from "@/components/avatar/Avatar";
+import BookCollection from "@/components/bookCollection/BookCollection";
 import { Button } from "@/components/ui/button";
 import ModeToggle from "@/components/ModeToggle";
 import { Link } from "react-router-dom";
@@ -17,12 +17,13 @@ const Profile = () => {
           <Link to="/">Home</Link>
         </Button>
         <div className="flex flex-row">
-          <Avatar
-            src="/books.png"
-            alt="Book Search"
-            className="w-[70px] h-auto rounded-full"
-          />
-
+          <Link to="/search">
+            <Avatar
+              src="/books.png"
+              alt="Book Search"
+              className="w-[100px] h-auto rounded-full border-solid border-black border-1 "
+            />
+          </Link>
           <div className="mt-5 mr-5 flex place-content-end">
             <ModeToggle />
           </div>

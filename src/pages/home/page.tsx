@@ -1,5 +1,5 @@
 "use client";
-import Avatar from "@/components/Avatar";
+import Avatar from "@/components/avatar/Avatar";
 import { Button } from "@/components/ui/button";
 import ModeToggle from "@/components/ModeToggle";
 import { Link } from "react-router-dom";

@@ -1,5 +1,5 @@
-import Avatar from "@/components/Avatar";
-import BookSearch from "@/components/BookSearch";
+import Avatar from "@/components/avatar/Avatar";
+import BookSearch from "@/components/bookSearch/BookSearch";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -16,11 +16,14 @@ const Search = () => {
         >
           <Link to="/">Home</Link>
         </Button>
-        <Avatar
-          src="/ProfileAvatar.png"
-          alt="Profile Avatar"
-          className="w-[100px] h-auto rounded-full border-solid border-black border-1 "
-        />
+
+        <Link to="/profile">
+          <Avatar
+            src="/ProfileAvatar.png"
+            alt="Profile Avatar"
+            className="w-[100px] h-auto rounded-full border-solid border-black border-1 "
+          />
+        </Link>
       </nav>
 
       <BookSearch />

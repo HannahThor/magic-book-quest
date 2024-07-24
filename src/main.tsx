@@ -6,7 +6,7 @@ import "./index.css";
 import Search from "./pages/search/page";
 import Profile from "./pages/profile/page";
 import Home from "./pages/home/page";
-
+import { ThemeProvider } from "@/components/theme-provider";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,8 +35,11 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
+    {" "}
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>{" "}
+    </ThemeProvider>
   </React.StrictMode>
 );
